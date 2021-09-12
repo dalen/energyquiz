@@ -1,0 +1,58 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "title": "fråga 1?",
+      "answers": [
+        {
+          "id": 1,
+          "text": "A"
+        },
+        {
+          "id": 2,
+          "text": "B"
+        },
+        {
+          "id": 3,
+          "text": "C"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "fråga 2?",
+      "answers": [
+        {
+          "id": 1,
+          "text": "A"
+        },
+        {
+          "id": 2,
+          "text": "B"
+        },
+        {
+          "id": 3,
+          "text": "C"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "fråga 3?",
+      "answers": [
+        {
+          "id": 1,
+          "text": "A"
+        },
+        {
+          "id": 2,
+          "text": "B"
+        },
+        {
+          "id": 3,
+          "text": "C"
+        }
+      ]
+    }
+  ]
+}
