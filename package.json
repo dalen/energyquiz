@@ -15,6 +15,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "decoders": "^1.25.3",
+    "marked": "^3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-promise": "^3.0.2",
@@ -64,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "@types/marked": "^3.0.0",
     "eslint-config-airbnb-typescript-prettier": "^4.2.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "prettier": "^2.4.0"

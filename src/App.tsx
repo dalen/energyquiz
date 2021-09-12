@@ -1,11 +1,10 @@
-import { Button, MobileStepper } from '@mui/material';
+import { Button, Container, MobileStepper } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useReducer } from 'react';
 import usePromise from 'react-promise';
-import './App.css';
 import { Question } from './components/Question';
 import { AppData } from './decoders/questions';
 
@@ -58,8 +57,6 @@ export const App = ({
     error,
   } = usePromise<AppData>(appDataPromise);
 
-  if (loading || !appData) return <LinearProgress />;
-
   if (error)
     return (
       <Alert severity="error">
@@ -67,8 +64,10 @@ export const App = ({
       </Alert>
     );
 
+  if (loading || !appData) return <LinearProgress />;
+
   return (
-    <div className="App">
+    <Container maxWidth="md">
       <MobileStepper
         variant="progress"
         steps={appData.questions.length}
@@ -93,6 +92,6 @@ export const App = ({
         }
       />
       <Question data={appData.questions[state.question]} />
-    </div>
+    </Container>
   );
 };

@@ -1,4 +1,12 @@
-import { string, object, array, $DecoderType, integer, guard } from 'decoders';
+import {
+  string,
+  object,
+  array,
+  $DecoderType,
+  integer,
+  guard,
+  optional,
+} from 'decoders';
 
 const answerDecoder = object({
   id: integer,
@@ -8,6 +16,7 @@ const answerDecoder = object({
 const questionDecoder = object({
   id: integer,
   title: string,
+  text: optional(string),
   answers: array(answerDecoder),
 });
 
