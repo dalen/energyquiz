@@ -1,6 +1,7 @@
 import { Box, Grid, Paper } from '@mui/material';
 import marked from 'marked';
 import { QuestionData } from '../decoders/questions';
+import { Action } from '../state';
 import { Answer } from './Answer';
 
 const getMarkdownText = (text: string) => {
@@ -8,7 +9,13 @@ const getMarkdownText = (text: string) => {
   return { __html: rawMarkup };
 };
 
-export const Question = ({ data }: { data: QuestionData }): JSX.Element => {
+export const Question = ({
+  data,
+  dispatch,
+}: {
+  data: QuestionData;
+  dispatch: React.Dispatch<Action>;
+}): JSX.Element => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -24,7 +31,7 @@ export const Question = ({ data }: { data: QuestionData }): JSX.Element => {
       </Grid>
       {data.answers.map((a) => (
         <Grid item xs={4}>
-          <Answer data={a} />
+          <Answer data={a} dispatch={dispatch} />
         </Grid>
       ))}
     </Grid>

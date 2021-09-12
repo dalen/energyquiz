@@ -7,42 +7,7 @@ import { useReducer } from 'react';
 import usePromise from 'react-promise';
 import { Question } from './components/Question';
 import { AppData } from './decoders/questions';
-
-type State = {
-  question: number;
-};
-
-type Action =
-  | {
-      type: 'answer';
-      question: number;
-    }
-  | {
-      type: 'back';
-    }
-  | {
-      type: 'next';
-    };
-
-const initialState: State = { question: 0 };
-
-const assertVoid = (_: never): never => {
-  throw new Error();
-};
-
-const reducer = (state: State, action: Action): State => {
-  switch (action.type) {
-    case 'answer':
-      return { question: state.question + 1 };
-    case 'next':
-      return { question: state.question + 1 };
-    case 'back':
-      return { question: state.question - 1 };
-    default:
-      assertVoid(action);
-      return state;
-  }
-};
+import { initialState, reducer } from './state';
 
 export const App = ({
   appDataPromise,
@@ -91,7 +56,7 @@ export const App = ({
           </Button>
         }
       />
-      <Question data={appData.questions[state.question]} />
+      <Question data={appData.questions[state.question]} dispatch={dispatch} />
     </Container>
   );
 };
